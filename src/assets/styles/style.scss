@@ -1,0 +1,141 @@
+// normalize style
+@import './variables/variables';
+@import './mixins/mixins';
+
+html {
+  font-size: $font-size;
+  scroll-behavior: smooth;
+}
+
+*,
+::before,
+:after,
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: $desktop;
+  font-family: $font;
+  font-weight: $regular;
+  margin: 0 auto 40px;
+  //   background-color: $light-pink;
+  -webkit-tap-highlight-color: transparent;
+  //   @media screen and (max-width: $tablet) {
+  //     width: 100%;
+  //   }
+  //   @media screen and (max-width: $mobile) {
+  //     width: 100%;
+  //   }
+}
+
+.container {
+  max-width: $desktop - 80px;
+  margin: 0 auto;
+
+  //   @media screen and (max-width: $tablet) {
+  //     max-width: $tablet - 80px;
+  //   }
+  //   @media screen and (max-width: $mobile) {
+  //     max-width: $mobile - 32px;
+  //   }
+}
+
+header {
+  background-image: url(../images/header/bg.webp);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0 0 40px 40px;
+}
+
+.header__inner {
+  @include flex(space-between, center);
+  height: 150px;
+
+  &-logo {
+    height: 40px;
+    max-width: 250px;
+  }
+
+  &-menu {
+    @include flex(space-between, center);
+    list-style: none;
+    gap: 40px;
+    margin-left: 35px;
+    margin-bottom: 15px;
+  }
+}
+
+.search__block {
+  position: relative;
+  flex-grow: 1;
+
+  &-input {
+    padding: 20px 75px;
+    background-color: #fff;
+    border-radius: 35px;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    flex-grow: 1;
+  }
+
+  &-icon {
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 25px);
+    cursor: pointer;
+  }
+
+  &-camera {
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+}
+
+.menu__icon {
+  width: 50px;
+  height: 50px;
+
+  &-item {
+    @include flex-column;
+    cursor: pointer;
+
+    span {
+      margin-top: 5px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.delivery-icon:hover path,
+.delivery-icon:hover polyline,
+.delivery-icon:hover line,
+.like-icon:hover path,
+.account-icon:hover path,
+.cart-icon:hover path {
+  fill: #fff;
+}
+
+.account-icon:hover path {
+  stroke: #fff; /* Change stroke color to black on hover */
+}
