@@ -53,6 +53,8 @@ body {
   //   }
 }
 
+// ===================================== Header =====================================
+
 header {
   background-image: url(../images/header/bg.webp);
   background-position: left;
@@ -122,7 +124,7 @@ header {
       margin-top: 5px;
       color: #fff;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: $light-bold;
     }
   }
 }
@@ -139,3 +141,85 @@ header {
 .account-icon:hover path {
   stroke: #fff; /* Change stroke color to black on hover */
 }
+
+// ===================================== /Header =====================================
+
+// ===================================== Slider =====================================
+
+.slider-section {
+  margin-top: 40px;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1352px;
+  margin: 0 auto;
+
+  &__btn-prev,
+  &__btn-next {
+    @include flex(center, center);
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: calc(50% - 20px);
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        fill: $violet;
+      }
+    }
+  }
+
+  &__btn-next {
+    left: auto;
+    right: 10px;
+  }
+
+  &__line {
+    display: flex;
+    width: 1360px;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  &__indicators {
+    @include flex(center, center);
+    margin-top: 20px;
+    list-style: none;
+    gap: 20px;
+
+    &-item {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $violet-light;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $violet;
+      }
+    }
+  }
+}
+
+.slider-arrow-prev {
+  position: absolute;
+  transform: rotate(-180deg);
+}
+
+.slider-arrow-next {
+  position: absolute;
+}
+
+.active {
+  background-color: $violet;
+}
+
+// ===================================== /Slider =====================================
