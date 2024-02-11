@@ -63,12 +63,10 @@ slider.append(sliderWrapper, sliderIndicators)
 
 // add script
 const sliderLength = sliderLine.childElementCount
-
 let position = 0
 let activeSlideIndex = 0
 
 function slidePrev() {
-  //   debugger
   if (position > 0) {
     position -= sliderImageWidth
     activeSlideIndex--

@@ -1,6 +1,6 @@
 const root = document.getElementById('root')
 const logo = `<svg
-class="header__inner-logo"
+class="header__inner-logo-svg"
 xmlns="http://www.w3.org/2000/svg"
 fill="#fff"
 >
