@@ -1,3 +1,7 @@
+import { sliderImageWidth } from './constants'
+
+// html building
+
 const slider = document.createElement('section')
 slider.classList.add('slider-section')
 
@@ -56,5 +60,61 @@ dotIndicator3.classList.add('slider__indicators-item')
 sliderIndicators.append(dotIndicator1, dotIndicator2, dotIndicator3)
 
 slider.append(sliderWrapper, sliderIndicators)
+
+// add script
+const sliderLength = sliderLine.childElementCount
+
+let position = 0
+let activeSlideIndex = 0
+
+function slidePrev() {
+  //   debugger
+  if (position > 0) {
+    position -= sliderImageWidth
+    activeSlideIndex--
+  } else {
+    position = sliderImageWidth * (sliderLength - 1)
+    activeSlideIndex = sliderLength - 1
+  }
+  sliderLine.style.right = position + 'px'
+  addActiveClass(activeSlideIndex)
+}
+
+function slideNext() {
+  if (position < sliderImageWidth * (sliderLength - 1)) {
+    position += sliderImageWidth
+    activeSlideIndex++
+  } else {
+    position = 0
+    activeSlideIndex = 0
+  }
+  sliderLine.style.right = position + 'px'
+  addActiveClass(activeSlideIndex)
+}
+
+// Indicators
+
+function addActiveClass(index) {
+  for (let indicator of indicators) {
+    indicator.classList.remove('active')
+  }
+  indicators[index].classList.add('active')
+}
+
+const indicators = slider.querySelectorAll('.slider__indicators-item')
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener('click', () => {
+    position = sliderImageWidth * index
+    sliderLine.style.right = position + 'px'
+    addActiveClass(index)
+  })
+})
+
+prevButton.addEventListener('click', slidePrev)
+nextButton.addEventListener('click', slideNext)
+
+window.addEventListener('DOMContentLoaded', () => {
+  indicators[0].classList.add('active')
+})
 
 export { slider }

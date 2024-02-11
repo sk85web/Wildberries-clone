@@ -139,7 +139,7 @@ header {
 }
 
 .account-icon:hover path {
-  stroke: #fff; /* Change stroke color to black on hover */
+  stroke: #fff;
 }
 
 // ===================================== /Header =====================================
@@ -157,6 +157,8 @@ header {
   justify-content: center;
   width: 1352px;
   margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
 
   &__btn-prev,
   &__btn-next {
@@ -169,6 +171,7 @@ header {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 5;
 
     &:hover {
       svg {
@@ -184,9 +187,9 @@ header {
 
   &__line {
     display: flex;
-    width: 1360px;
-    overflow: hidden;
-    border-radius: 20px;
+    width: 1352px;
+    position: relative;
+    transition: all 0.3s linear;
   }
 
   &__indicators {
