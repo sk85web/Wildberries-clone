@@ -1,4 +1,7 @@
 import { sliderImageWidth } from './constants'
+import slide1Src from '../assets/images/slider/slide1.jpg'
+import slide2Src from '../assets/images/slider/slide2.jpg'
+import slide3Src from '../assets/images/slider/slide3.jpg'
 
 // html building
 
@@ -28,16 +31,9 @@ const slide1 = document.createElement('img')
 const slide2 = document.createElement('img')
 const slide3 = document.createElement('img')
 
-// slide1.src = './assets/images/slider/1.jpg" alt="slide-1'
-// slide2.src = './assets/images/slider/2.jpg" alt="slide-2'
-// slide3.src = './assets/images/slider/3.jpg" alt="slide-3'
-
-slide1.src =
-  'https://static-basket-01.wbbasket.ru/vol1/crm-bnrs/poster/ru/globalmainv3/1352x250/skidon_2704_11_02.jpg'
-slide2.src =
-  'https://static-basket-01.wbbasket.ru/vol1/crm-bnrs/poster/ru/globalmainv3/1352x250/hit_2704_11_02.jpg'
-slide3.src =
-  'https://static-basket-01.wbbasket.ru/vol1/crm-bnrs/poster/ru/globalmainv3/1352x250/delivery_2704_by.jpg'
+slide1.src = slide1Src
+slide2.src = slide2Src
+slide3.src = slide3Src
 
 slide1.alt = 'slide-1'
 slide2.alt = 'slide-2'
