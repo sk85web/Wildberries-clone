@@ -2,6 +2,7 @@ import { sliderImageWidth } from './constants'
 import slide1Src from '../assets/images/slider/slide1.jpg'
 import slide2Src from '../assets/images/slider/slide2.jpg'
 import slide3Src from '../assets/images/slider/slide3.jpg'
+import slide4Src from '../assets/images/slider/slide4.jpg'
 
 // html building
 
@@ -30,16 +31,19 @@ sliderLine.classList.add('slider__line')
 const slide1 = document.createElement('img')
 const slide2 = document.createElement('img')
 const slide3 = document.createElement('img')
+const slide4 = document.createElement('img')
 
 slide1.src = slide1Src
 slide2.src = slide2Src
 slide3.src = slide3Src
+slide4.src = slide4Src
 
 slide1.alt = 'slide-1'
 slide2.alt = 'slide-2'
 slide3.alt = 'slide-3'
+slide3.alt = 'slide-4'
 
-sliderLine.append(slide1, slide2, slide3)
+sliderLine.append(slide1, slide2, slide3, slide4)
 
 sliderWrapper.append(prevButton, sliderLine, nextButton)
 
@@ -52,8 +56,15 @@ const dotIndicator2 = document.createElement('li')
 dotIndicator2.classList.add('slider__indicators-item')
 const dotIndicator3 = document.createElement('li')
 dotIndicator3.classList.add('slider__indicators-item')
+const dotIndicator4 = document.createElement('li')
+dotIndicator4.classList.add('slider__indicators-item')
 
-sliderIndicators.append(dotIndicator1, dotIndicator2, dotIndicator3)
+sliderIndicators.append(
+  dotIndicator1,
+  dotIndicator2,
+  dotIndicator3,
+  dotIndicator4
+)
 
 slider.append(sliderWrapper, sliderIndicators)
 
