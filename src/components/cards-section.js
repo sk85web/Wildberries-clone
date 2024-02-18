@@ -3,6 +3,7 @@ import { dataUrl } from './constants'
 import { generateCard } from './generate-card'
 import { showModal } from './show-modal'
 import { searchInput } from './search-input'
+import { showBasketModal } from './show-basket-modal'
 
 const cards = document.createElement('section')
 cards.classList.add('cards')
@@ -40,6 +41,7 @@ getData(dataUrl)
     renderOnPage(response)
     showModal(response)
     searchInput(response)
+    showBasketModal()
   })
   .catch((err) => console.log('Error in html-building ' + err))
 

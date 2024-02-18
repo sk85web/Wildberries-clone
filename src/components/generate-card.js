@@ -1,3 +1,4 @@
+import { addInBasketClick } from './addInBasketClick'
 import { cardLikeIcon } from './constants'
 
 function generateCard(cardData) {
@@ -51,6 +52,10 @@ function generateCard(cardData) {
   cardButton.type = 'button'
   cardButton.innerText = 'В корзину'
   cardButtonBlock.append(cardButton)
+
+  cardButton.addEventListener('click', () => {
+    addInBasketClick(cardData)
+  })
 
   const cardLikeBlock = document.createElement('div')
   cardLikeBlock.classList.add('cards-item__like')
