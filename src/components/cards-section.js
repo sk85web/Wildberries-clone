@@ -2,6 +2,7 @@ import { closeModal } from './close-modal'
 import { dataUrl } from './constants'
 import { generateCard } from './generate-card'
 import { showModal } from './show-modal'
+import { searchInput } from './search-input'
 
 const cards = document.createElement('section')
 cards.classList.add('cards')
@@ -38,6 +39,7 @@ getData(dataUrl)
   .then((response) => {
     renderOnPage(response)
     showModal(response)
+    searchInput(response)
   })
   .catch((err) => console.log('Error in html-building ' + err))
 

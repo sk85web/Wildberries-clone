@@ -40,6 +40,7 @@ function generateCard(cardData) {
   const cardDescriptionBlock = document.createElement('div')
   cardDescriptionBlock.classList.add('cards-item__description')
   const cardDescriptionSpan = document.createElement('span')
+  cardDescriptionSpan.classList.add('cards-item__description-span')
   cardDescriptionSpan.innerText = description
   cardDescriptionBlock.append(cardDescriptionSpan)
 

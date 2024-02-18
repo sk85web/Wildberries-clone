@@ -7,6 +7,7 @@ import {
   accountIcon,
   cartIcon,
 } from './constants'
+import { searchInput } from './search-input'
 
 import { showPopup, closePopup } from './burger-menu'
 

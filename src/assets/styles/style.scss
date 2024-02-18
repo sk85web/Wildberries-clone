@@ -348,6 +348,10 @@ header {
   }
 }
 
+.hidden-card {
+  display: none;
+}
+
 // ================ Card modal ===================
 .card-modal {
   @include flex(center, center);
