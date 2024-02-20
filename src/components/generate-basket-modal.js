@@ -56,7 +56,6 @@ function generateBasketModal(dataCard) {
     const clearBtn = modalInfoBlock.querySelector('.basket-card__total-btn')
     clearBtn.addEventListener('click', () => {
       clearBasket()
-      // generateBasketModal([])
     })
   } else {
     busketTitle.innerText = 'Корзина пуста'
