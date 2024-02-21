@@ -1,6 +1,3 @@
-import { basketArray } from './constants'
-import { generateBasketModal } from './generate-basket-modal'
-
 function clearBasket() {
   const basketList = document.querySelector('.basket-card__list')
   const totalAmount = document.querySelector('.basket-card__total')
@@ -11,8 +8,8 @@ function clearBasket() {
   if (totalAmount) {
     totalAmount.remove()
   }
-
   basketTitle.innerText = 'Корзина пуста'
+  localStorage.clear()
 }
 
 export { clearBasket }

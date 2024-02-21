@@ -429,8 +429,8 @@ header {
         left: 10px;
         bottom: 70px;
         width: 190px;
-        color: #fff;
-        background-color: #9b0ff2;
+        color: $white;
+        background-color: $violet;
         border: none;
         border-radius: 5px;
         outline: none;
@@ -439,6 +439,12 @@ header {
         font-size: 24px;
         font-weight: 700;
         cursor: pointer;
+
+        &-clicked {
+          background-color: $light-black;
+          color: $white;
+          cursor: auto;
+        }
 
         &:hover {
           background-color: $violet-button-hover;

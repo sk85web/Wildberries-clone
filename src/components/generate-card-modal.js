@@ -1,3 +1,5 @@
+import { addInBasketClick } from './addInBasketClick'
+
 function generateCardModal(dataCard) {
   const { image, price, deliveryTime, description } = dataCard
   const modal = document.createElement('div')
@@ -19,6 +21,7 @@ function generateCardModal(dataCard) {
 
   const modalRight = document.createElement('div')
   modalRight.classList.add('card-modal__info-right')
+  modalRight.id = `cardModal${dataCard.id}`
 
   const cardDiscription = document.createElement('div')
   cardDiscription.classList.add('card-modal__info-right-discription')
@@ -36,6 +39,11 @@ function generateCardModal(dataCard) {
   cardButton.classList.add('card-modal__info-right-button')
   cardButton.type = 'button'
   cardButton.innerText = 'В корзину'
+
+  cardButton.addEventListener('click', () => {
+    addInBasketClick(dataCard)
+    cardButton.classList.add('card-modal__info-right-button-clicked')
+  })
 
   modalRight.append(cardDiscription, cardPrice, cardDelivery, cardButton)
 

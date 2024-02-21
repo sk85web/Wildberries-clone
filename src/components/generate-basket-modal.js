@@ -1,4 +1,3 @@
-import { addInBasketClick } from './addInBasketClick'
 import { clearBasket } from './clear-basket'
 
 function generateBasketModal(dataCard) {
@@ -15,7 +14,6 @@ function generateBasketModal(dataCard) {
 
   const basketList = document.createElement('ul')
   basketList.classList.add('basket-card__list')
-
   if (dataCard.length) {
     dataCard.forEach((card) => {
       const { image, price, deliveryTime, description } = card

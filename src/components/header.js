@@ -8,8 +8,10 @@ import {
   cartIcon,
 } from './constants'
 import { searchInput } from './search-input'
-
+import { showBasketModal } from './show-basket-modal'
 import { showPopup, closePopup } from './burger-menu'
+import { generateBasketModal } from './generate-basket-modal'
+import { loadFromLocalStorage } from './local-storage'
 
 const header = document.createElement('header')
 
@@ -71,6 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
+
+  // Show basket modal window by click on menu icon-basket
+  const basketIcon = document.querySelector('.menu__icon:last-child')
+  basketIcon.addEventListener('click', () => {
+    const dataStorage = loadFromLocalStorage()
+    generateBasketModal(dataStorage)
+    showBasketModal()
+  })
 })
 
 export { header }

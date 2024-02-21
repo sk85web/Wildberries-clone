@@ -1,4 +1,6 @@
 import { deliveryIcon, likeIcon, accountIcon, cartIcon } from './constants'
+import { showBasketModal } from './show-basket-modal'
+
 const body = document.querySelector('body')
 
 const popup = document.createElement('div')
@@ -40,6 +42,14 @@ function showPopup() {
 
   const burger = document.querySelector('.burger')
   burger.classList.toggle('burger_close')
+
+  body.classList.add('lock')
+
+  const basketIcon = popup.querySelector('.menu__icon:last-child')
+  basketIcon.addEventListener('click', () => {
+    closePopup()
+    showBasketModal()
+  })
 }
 
 function closePopup() {
@@ -47,6 +57,7 @@ function closePopup() {
   popup.classList.remove('show-popup')
   const burger = document.querySelector('.burger')
   burger.classList.toggle('burger_close')
+  body.classList.remove('lock')
 }
 
 export { showPopup, closePopup }

@@ -14,6 +14,9 @@ function showModal(data) {
       body.classList.add('lock')
       root.classList.add('root-lock')
       root.append(cardModalWindow)
+      const modalRight = cardModalWindow.querySelector(
+        '.card-modal__info-right'
+      )
 
       const closeBtn = cardModalWindow.querySelector('.card-modal__info-close')
       closeBtn.addEventListener('click', closeModal)

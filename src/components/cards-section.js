@@ -30,7 +30,9 @@ function getData(url) {
 }
 
 function renderOnPage(data) {
+  // debugger
   data.forEach((element) => {
+    element.image = `${element.image}?random=${Math.random()}`
     const card = generateCard(element)
     cardsWrapper.append(card)
   })
@@ -41,7 +43,6 @@ getData(dataUrl)
     renderOnPage(response)
     showModal(response)
     searchInput(response)
-    showBasketModal()
   })
   .catch((err) => console.log('Error in html-building ' + err))
 

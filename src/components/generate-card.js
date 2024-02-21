@@ -11,7 +11,8 @@ function generateCard(cardData) {
   const cardImageBlock = document.createElement('div')
   cardImageBlock.classList.add('cards-item__img')
   const cardImage = document.createElement('img')
-  cardImage.src = `${image}?random=${Math.random()}`
+  // cardImage.src = `${image}?random=${Math.random()}`
+  cardImage.src = `${image}`
 
   const fastShowBtn = document.createElement('button')
   fastShowBtn.type = 'button'
