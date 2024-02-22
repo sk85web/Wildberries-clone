@@ -132,6 +132,21 @@ header {
       font-weight: $light-bold;
     }
   }
+  &-item-marker {
+    @include marker;
+  }
+
+  &:last-child {
+    position: relative;
+  }
+}
+
+.show {
+  @include flex(center, center);
+}
+
+.burger-field {
+  display: none;
 }
 
 .delivery-icon:hover path,
@@ -551,7 +566,21 @@ header {
   }
 
   // ================ Burger ================
+  .burger-field {
+    position: relative;
+    display: block;
+  }
 
+  .menu__icon-item-marker-burger {
+    @include marker;
+    width: 23px;
+    height: 23px;
+    top: -13px;
+    font-size: 14px;
+    &-show {
+      @include flex(center, center);
+    }
+  }
   .header .burger {
     display: flex;
   }

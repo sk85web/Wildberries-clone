@@ -12,6 +12,7 @@ import { showBasketModal } from './show-basket-modal'
 import { showPopup, closePopup } from './burger-menu'
 import { generateBasketModal } from './generate-basket-modal'
 import { loadFromLocalStorage } from './local-storage'
+import { markBasket, markBasketBurger } from './markerBasket'
 
 const header = document.createElement('header')
 
@@ -27,31 +28,39 @@ header.insertAdjacentHTML(
         <input class="search__block-input" placeholder="Найти товары" id="search-input">
         <label for="search-input">${searchCameraIcon}</label>
       </div>
-      <div class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <<div class="burger-field">
+        <div class="burger">
+         <span></span>
+         <span></span>
+          <span></span>
+        </div>
+        <div id="burger-mark" class="menu__icon-item-marker-burger"></div>
       </div>
       <ul class="header__inner-menu">
         <li class="menu__icon">
             <div class="menu__icon-item">
                 ${deliveryIcon}
                 <span>Доставки</span>
+             </div>   
         </li>
         <li class="menu__icon">
             <div class="menu__icon-item">
                 ${likeIcon}
                 <span>Избр.</span>
+            </div>
         </li>
         <li class="menu__icon">
             <div class="menu__icon-item">
                 ${accountIcon}
                 <span>Войти</span>
+            </div>
         </li>
         <li class="menu__icon">
             <div class="menu__icon-item">
                 ${cartIcon}
                 <span>Корзина</span>
+            </div>
+            <div id="header-mark" class="menu__icon-item-marker"></div>
         </li>
       </ul>
     </div>
@@ -75,12 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Show basket modal window by click on menu icon-basket
+
   const basketIcon = document.querySelector('.menu__icon:last-child')
   basketIcon.addEventListener('click', () => {
     const dataStorage = loadFromLocalStorage()
     generateBasketModal(dataStorage)
     showBasketModal()
   })
+  markBasket()
+  markBasketBurger()
 })
 
 export { header }

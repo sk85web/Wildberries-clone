@@ -1,4 +1,5 @@
 import { clearBasket } from './clear-basket'
+import { unMarkBasket, unMarkBasketBurger } from './markerBasket'
 
 function generateBasketModal(dataCard) {
   const modal = document.createElement('div')
@@ -54,6 +55,8 @@ function generateBasketModal(dataCard) {
     const clearBtn = modalInfoBlock.querySelector('.basket-card__total-btn')
     clearBtn.addEventListener('click', () => {
       clearBasket()
+      unMarkBasket()
+      unMarkBasketBurger()
     })
   } else {
     busketTitle.innerText = 'Корзина пуста'
