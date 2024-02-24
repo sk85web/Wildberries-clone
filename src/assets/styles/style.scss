@@ -442,7 +442,7 @@ header {
       &-button {
         position: absolute;
         left: 10px;
-        bottom: 70px;
+        bottom: 10px;
         width: 190px;
         color: $white;
         background-color: $violet;
@@ -478,6 +478,7 @@ header {
   justify-content: flex-start;
   align-items: flex-start;
   overflow: auto;
+  scrollbar-width: none;
 
   &__title {
     font-size: 2rem;
@@ -654,12 +655,14 @@ header {
 
     &__innerblock {
       @include flex-column;
-      justify-content: center;
-      width: 800px;
+      margin: auto;
+      width: 80%;
       height: 800px;
       background-color: #1a1a1a;
       border-radius: 35px;
       opacity: 0.8;
+      overflow-y: scroll;
+      scrollbar-width: none;
 
       .header__inner-menu {
         display: flex;
@@ -692,6 +695,19 @@ header {
     display: none;
   }
 
+  .header__inner-menu {
+    gap: 70px;
+  }
+
+  .header__inner-menu {
+    font-size: 1rem;
+  }
+
+  .menu__icon {
+    width: 60px;
+    height: 60px;
+  }
+
   .search__block-input {
     font-size: 1.8rem;
   }
@@ -700,6 +716,17 @@ header {
   .slider-arrow-next {
     display: none;
   }
+
+  .card-modal__info-right {
+    &-discription {
+      margin-bottom: 25px;
+      font-size: 1rem;
+    }
+
+    &-price {
+      font-size: 3rem;
+    }
+  }
 }
 
 @media screen and (max-width: 720px) {
@@ -707,9 +734,9 @@ header {
     margin-left: 10px;
   }
 
-  .card-modal__info-right-discription {
-    margin-bottom: 25px;
-    font-size: 1rem;
+  .basket-card__total {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -719,30 +746,59 @@ header {
     width: calc(100% - 150px);
   }
 
-  .card-modal__info-right-price {
-    font-size: 3rem;
-  }
-
   .burger {
     width: 70px;
     height: 70px;
   }
+
+  .card-modal__info-right-button {
+    width: 150px;
+    font-size: 20px;
+  }
+
+  .card-modal__info-right-price {
+    font-size: 2.1rem;
+  }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
+  .header__inner-menu {
+    gap: 70px;
+  }
+
+  .card-modal__info {
+    @include flex-column;
+  }
+
   .card-modal__info-left {
     flex-direction: column;
     width: 100%;
     height: 50%;
     overflow: hidden;
+
+    &-img {
+      border-radius: 20px 20px 0 0;
+    }
   }
 
   .card-modal__info-right {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    position: relative;
   }
 
+  .card-modal__info-close {
+    top: -35px;
+    right: -30px;
+    color: $white;
+  }
+}
+
+@media screen and (max-width: 400px) {
   .card-modal__info-right-button {
     width: 150px;
     font-size: 14px;

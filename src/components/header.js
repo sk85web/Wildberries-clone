@@ -28,7 +28,7 @@ header.insertAdjacentHTML(
         <input class="search__block-input" placeholder="Найти товары" id="search-input">
         <label for="search-input">${searchCameraIcon}</label>
       </div>
-      <<div class="burger-field">
+      <div class="burger-field">
         <div class="burger">
          <span></span>
          <span></span>
